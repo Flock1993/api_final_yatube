@@ -22,14 +22,14 @@ class Post(models.Model):
         'Group',
         blank=True,
         null=True,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         related_name='posts',
     )
     image = models.ImageField(
         upload_to='posts/', null=True, blank=True)
 
     def __str__(self):
-        return self.text
+        return self.text[0:15]
 
 
 class Comment(models.Model):
