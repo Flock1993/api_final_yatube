@@ -29,7 +29,7 @@ class Post(models.Model):
         upload_to='posts/', null=True, blank=True)
 
     def __str__(self):
-        return self.text[0:15]
+        return self.text[:15]
 
 
 class Comment(models.Model):
